@@ -26,5 +26,5 @@ jobs:
       uses: actions/upload-artifact@v3.2.1
       with:
         name: Library
-        path: '.build/'
+        path: '/home/runner/work/BitBox/BitBox/bin/Debug/net8.0/BitBox.dll'
   
