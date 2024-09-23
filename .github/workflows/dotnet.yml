@@ -28,7 +28,7 @@ jobs:
     - name: Publish
       uses: softprops/action-gh-release@v2
       with:
-        files: BitBox.zip
-        token: ${{ secrets.GITHUB_TOKEN }}
+        files: '/home/runner/work/BitBox/BitBox/bin/Release/net8.0/BitBox.dll'
+        token: ${{ secrets.TOKEN }}
         repository: auxy6858/BitBox
         tag_name: "Release"
