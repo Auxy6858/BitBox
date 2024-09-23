@@ -18,15 +18,16 @@ jobs:
         dotnet-version: 8.0.x
     - name: Restore dependencies
       run: dotnet restore
-    - name: Build
+    - name: Dotnet Publish
       run: dotnet publish
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v4
       with:
         name: BitBox
-        path: '/home/runner/work/BitBox/BitBox/bin/Debug/net8.0/BitBox.dll'
+        path: '/home/runner/work/BitBox/BitBox/bin/Release/net8.0/BitBox.dll'
     - name: Publish
       uses: softprops/action-gh-release@v2
       with:
-        files: 
-          BitBox.zip
+        body_path: ${{ github.workspace }}-BitBox.zip
+        repository: auxy6858/BitBox
+        token: ${{ secrets.CUSTOM_GITHUB_TOKEN }}
