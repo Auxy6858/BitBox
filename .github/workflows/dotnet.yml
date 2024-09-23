@@ -31,3 +31,4 @@ jobs:
         body_path: ${{ github.workspace }}-BitBox.zip
         repository: auxy6858/BitBox
         token: ${{ secrets.CUSTOM_GITHUB_TOKEN }}
+        tag_name: "Release"
