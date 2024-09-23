@@ -19,12 +19,16 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
-      run: dotnet build --no-restore
+      run: dotnet build --no-restore --release
     - name: Test
       run: dotnet test --no-build --verbosity normal
     - name: Upload a Build Artifact
-      uses: actions/upload-artifact@v3.2.1
+      uses: actions/upload-artifact@v4
       with:
-        name: Library
+        name: BitBox
         path: '/home/runner/work/BitBox/BitBox/bin/Debug/net8.0/BitBox.dll'
-  
+    - name: Publish
+      uses: softprops/action-gh-release@v2
+      with:
+        files: 
+          BitBox.zip
